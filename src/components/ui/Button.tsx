@@ -13,7 +13,7 @@ const buttonStyles = {
   danger: "bg-red-600 hover:bg-red-700 text-white",
 };
 
-const Button: React.FC<ButtonProps> = ({ children, onClick, type = "button", variant = "primary" }) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick, type = "button", variant = "primary"}) => {
   return (
     <button
       type={type}

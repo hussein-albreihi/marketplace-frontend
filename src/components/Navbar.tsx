@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartStore } from "../store/CartStore";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
+import Button from "./ui/Button";
 
 const Navbar = () => {
   const { cart } = useCartStore();
@@ -12,8 +13,7 @@ const Navbar = () => {
     <nav className="bg-gray-800 p-4 shadow-lg flex justify-between items-center relative">
       <Link to="/" className="text-white text-lg font-bold">Marketplace</Link>
       <div className="relative">
-        <button
-          className="relative text-white focus:outline-none flex items-center space-x-2 hover:bg-gray-700 px-3 py-2 rounded-lg transition"
+        <Button
           onClick={() => setIsOpen(!isOpen)}
         >
           <ShoppingCartIcon className="w-6 h-6" />
@@ -22,7 +22,7 @@ const Navbar = () => {
               {cartCount}
             </span>
           )}
-        </button>
+        </Button>
         {isOpen && (
           <div className="absolute right-0 mt-2 w-80 bg-white shadow-xl rounded-lg p-4 border border-gray-200">
             {cart.length === 0 ? (
